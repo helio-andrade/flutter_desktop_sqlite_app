@@ -1,4 +1,3 @@
-
 import 'package:flutter_desktop_sqlite_app/Json/account_json.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -60,5 +59,4 @@ class DatabaseHelper{
     List<Map<String,Object?>> result = await db.rawQuery("select * from accounts where accHolder LIKE ? OR accName LIKE ?",["%$keyword%","%$keyword%"]);
     return result.map((e) => AccountsJson.fromMap(e)).toList();
   }
-
 }
